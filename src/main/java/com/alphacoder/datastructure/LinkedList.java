@@ -84,4 +84,24 @@ public class LinkedList {
         temp= null;
         this.size--;
     }
+
+    public void reverse(){
+        if(size==0){
+            System.out.print("LinkedList is empty.");
+            throw new UnsupportedOperationException();
+        }
+        Node temp= head;
+        Node previous= null;
+        Node next= head.getNext();
+
+        while(next!= null){
+            previous= temp;
+            temp= next;
+            next= next.getNext();
+            temp.setNext(previous);
+        }
+
+        head.setNext(null);
+        head= temp;
+    }
 }

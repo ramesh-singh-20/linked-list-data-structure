@@ -271,4 +271,57 @@ class LinkedListTest extends Specification{
         list.get(1)== 4
         list.get(2)== 5
     }
+
+    def 'Test LinkedList | reverse() | Reverse an empty list'(){
+        given:
+        def list= new LinkedList();
+
+        when:
+        list.reverse();
+
+        then:
+        thrown(UnsupportedOperationException)
+    }
+
+    def 'Test LinkedList | reverse() | Delete single element list'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+
+        when:
+        list.reverse()
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 1
+
+        and:
+        list.get(0)== 1
+
+    }
+
+    def 'Test LinkedList | reverse() | Reverse list'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.reverse()
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 4
+
+        and:
+        list.get(0)== 4
+        list.get(1)== 3
+        list.get(2)== 2
+        list.get(3)== 1
+
+    }
 }
