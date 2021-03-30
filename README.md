@@ -15,7 +15,7 @@ Make sure all index operations throws IndexOutOfBoundsException for invalid inde
 
 **Assumption**:
 
-LinkedList is of integer type.
+LinkedList is of int type.
 
 **Operations**
 Reverse a linked list using iterative method: Time complexity is O(n).
