@@ -322,6 +322,29 @@ class LinkedListTest extends Specification{
         list.get(1)== 3
         list.get(2)== 2
         list.get(3)== 1
+    }
 
+    def 'Test LinkedList | reverseRecursively() | Reverse list'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.reverseRecursively()
+        list.print()
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 4
+
+        and:
+        list.get(0)== 4
+        list.get(1)== 3
+        list.get(2)== 2
+        list.get(3)== 1
     }
 }

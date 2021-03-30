@@ -2,9 +2,11 @@ package com.alphacoder.datastructure;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class LinkedList {
+    @Setter
     private Node head;
     private int size;
 
@@ -104,4 +106,42 @@ public class LinkedList {
         head.setNext(null);
         head= temp;
     }
+
+    public void reverseRecursively(){
+        if(size==0){
+            System.out.print("LinkedList is empty.");
+            throw new UnsupportedOperationException();
+        }
+        reverse(this.head);
+    }
+
+    private Node reverse(Node head){
+        if(head== null){
+            return null;
+        }
+
+        if(head.getNext()== null){
+            return head;
+        }
+
+        Node newHeadNode= reverse(head.getNext());
+        head.getNext().setNext(head);
+        head.setNext(null);
+        this.head= newHeadNode;
+        return newHeadNode;
+    }
+
+    public void print(){
+        Node node= this.getHead();
+        System.out.print("[ ");
+
+        while(node!= null){
+            System.out.print(node.getData());
+            System.out.print(" ");
+            node= node.getNext();
+        }
+
+        System.out.print("]");
+    }
+
 }
