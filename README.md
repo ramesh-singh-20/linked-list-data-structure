@@ -18,7 +18,8 @@ Make sure all index operations throws IndexOutOfBoundsException for invalid inde
 LinkedList is of integer type.
 
 **Operations**
-Reverse a linked list using iterative method: Time complexity is O(n)
+Reverse a linked list using iterative method: Time complexity is O(n).
+Reverse a linked list recursively: Time complexity is O(n).
 
 **Testing**
 
