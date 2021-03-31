@@ -1,12 +1,15 @@
 package com.alphacoder.datastructure;
 
+import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Stack;
+
 @Getter
 public class LinkedList {
-    @Setter
+    @Setter(AccessLevel.PRIVATE)
     private Node head;
     private int size;
 
@@ -89,7 +92,7 @@ public class LinkedList {
 
     public void reverse(){
         if(size==0){
-            System.out.print("LinkedList is empty.");
+            System.out.println("LinkedList is empty.");
             throw new UnsupportedOperationException();
         }
         Node temp= head;
@@ -109,7 +112,7 @@ public class LinkedList {
 
     public void reverseRecursively(){
         if(size==0){
-            System.out.print("LinkedList is empty.");
+            System.out.println("LinkedList is empty.");
             throw new UnsupportedOperationException();
         }
         reverse(this.head);
@@ -142,6 +145,46 @@ public class LinkedList {
         }
 
         System.out.print("]");
+        System.out.println();
+    }
+
+    public void printRecursively(Node head){
+        if(head== null){
+            return;
+        }
+        System.out.print(head.getData());
+        System.out.print(" ");
+        printRecursively(head.getNext());
+    }
+
+    public void printReverse(){
+        if(this.size()== 0){
+            return;
+        }
+        Node current= this.head;
+        Stack<Integer> stack= new Stack<>();
+
+        while(current!= null){
+            stack.push(current.getData());
+            current= current.getNext();
+        }
+
+        System.out.println();
+        while(!stack.isEmpty()) {
+            System.out.print(stack.pop());
+            System.out.print(" ");
+        }
+
+    }
+
+    public void printReverseRecursively(Node head){
+        if(head== null){
+            return;
+        }
+        printReverseRecursively(head.getNext());
+        System.out.print(head.getData());
+        System.out.print(" ");
+
     }
 
 }

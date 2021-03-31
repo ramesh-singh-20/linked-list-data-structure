@@ -334,8 +334,6 @@ class LinkedListTest extends Specification{
 
         when:
         list.reverseRecursively()
-        list.print()
-
 
         then:
         list.isEmpty()== false
@@ -347,4 +345,99 @@ class LinkedListTest extends Specification{
         list.get(2)== 2
         list.get(3)== 1
     }
+
+    def 'Test LinkedList | print() | Print list'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.print()
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 4
+
+        and:
+        list.get(0)== 1
+        list.get(1)== 2
+        list.get(2)== 3
+        list.get(3)== 4
+    }
+
+    def 'Test LinkedList | printRecursively() | Print list'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.printRecursively(list.getHead())
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 4
+
+        and:
+        list.get(0)== 1
+        list.get(1)== 2
+        list.get(2)== 3
+        list.get(3)== 4
+    }
+
+    def 'Test LinkedList | printReverse() | Print list in reverse non recursive'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.printReverse()
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 4
+
+        and:
+        list.get(0)== 1
+        list.get(1)== 2
+        list.get(2)== 3
+        list.get(3)== 4
+    }
+
+    def 'Test LinkedList | printReverseRecursively() | Print list in reverse recursively'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.printReverseRecursively(list.getHead());
+
+
+        then:
+        list.isEmpty()== false
+        list.size()== 4
+
+        and:
+        list.get(0)== 1
+        list.get(1)== 2
+        list.get(2)== 3
+        list.get(3)== 4
+    }
+
+
+
 }
