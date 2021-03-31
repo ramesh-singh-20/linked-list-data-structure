@@ -19,10 +19,15 @@ LinkedList is of int type.
 
 **Operations**
 Reverse a linked list using iterative method: Time complexity is O(n).
+
 Reverse a linked list recursively: Time complexity is O(n).
+
 Print LinkedList iteratively.
+
 Print LinkedList recursively.
+
 Print LinkedList in reverse order recursively.
+
 Print LinkedList in reverse order non recursively.
 
 **Testing**
