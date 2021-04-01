@@ -5,10 +5,15 @@
 Create a list data structure with following functions:
 
 Retrieve an element at an index: Time complexity should be O(n).
+
 Insert an element at an index: Time complexity should be O(n).
+
 Update an element at an index: Time complexity should be O(n).
+
 Delete an element at an index: Time complexity should be O(n).
+
 size of the list: Time complexity should be O(1).
+
 check to see if list is empty: Time complexity should be O(1).
 
 Make sure all index operations throws IndexOutOfBoundsException for invalid index.
@@ -18,6 +23,7 @@ Make sure all index operations throws IndexOutOfBoundsException for invalid inde
 LinkedList is of int type.
 
 **Operations**
+
 Reverse a linked list using iterative method: Time complexity is O(n).
 
 Reverse a linked list recursively: Time complexity is O(n).
