@@ -438,6 +438,84 @@ class LinkedListTest extends Specification{
         list.get(3)== 4
     }
 
+    def 'Test LinkedList | insert() | insert multiple elements at the start'(){
+        given:
+        def list= new LinkedList();
+
+        when:
+        list.insert(3, 0)
+        list.insert(5, 0)
+        list.insert(2, 0)
+
+        then:
+        list.isEmpty()== false;
+        list.size()== 3
+
+        and:
+        list.get(0)== 2
+        list.get(1)== 5
+        list.get(2)== 3
+    }
+
+    def 'Test LinkedList | insert() | insert multiple elements at the end'(){
+        given:
+        def list= new LinkedList();
+
+        when:
+        list.insert(3, list.size())
+        list.insert(5, list.size())
+        list.insert(2, list.size())
+
+        then:
+        list.isEmpty()== false;
+        list.size()== 3
+
+        and:
+        list.get(0)== 3
+        list.get(1)== 5
+        list.get(2)== 2
+    }
+
+    def 'Test LinkedList | delete() | Delete multiple elements at the start'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.delete(0)
+        list.delete(0)
+        list.delete(0)
+
+        then:
+        list.isEmpty()== false
+        list.size()== 1
+        list.get(0)== 4
+
+    }
+
+    def 'Test LinkedList | delete() | Delete multiple elements at the end'(){
+        given:
+        def list= new LinkedList();
+        list.insert(1, 0)
+        list.insert(2, 1)
+        list.insert(3, 2)
+        list.insert(4, 3)
+
+        when:
+        list.delete(3)
+        list.delete(2)
+        list.delete(1)
+
+        then:
+        list.isEmpty()== false
+        list.size()== 1
+        list.get(0)== 1
+
+    }
+
 
 
 }

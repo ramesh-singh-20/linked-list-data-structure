@@ -30,18 +30,27 @@ public class LinkedList {
 
         if(head==null){
             head= node;
-        }else{
-            Node temp= head;
-            Node previous= head;
+        }else {
+            Node temp = head;
+            Node previous = head;
 
-            for(int i= 0; i< index; i++){
-                previous= temp;
-                temp= temp.getNext();
+            if (index == 0) {
+                insertAtIndexZero(node);
+            } else {
+                for (int i = 0; i < index; i++) {
+                    previous = temp;
+                    temp = temp.getNext();
+                }
+                previous.setNext(node);
+                node.setNext(temp);
             }
-            previous.setNext(node);
-            node.setNext(temp);
         }
         size++;
+    }
+
+    private void insertAtIndexZero(Node node){
+        node.setNext(this.head);
+        head= node;
     }
 
     public int get(int index){
@@ -76,17 +85,23 @@ public class LinkedList {
         }
 
         Node temp= head;
-        Node previous= head;
+        Node previous= null;
         Node next= head.getNext();
 
-        for(int i=0; i<index; i++){
-            previous= temp;
-            temp=temp.getNext();
-            next= temp.getNext();
+        if(index==0){
+            this.head= this.head.getNext();
+        }else {
+
+            for (int i = 0; i < index; i++) {
+                previous = temp;
+                temp = temp.getNext();
+                next = temp.getNext();
+            }
+
+            previous.setNext(next);
+            temp.setNext(null);
         }
 
-        previous.setNext(next);
-        temp= null;
         this.size--;
     }
 
