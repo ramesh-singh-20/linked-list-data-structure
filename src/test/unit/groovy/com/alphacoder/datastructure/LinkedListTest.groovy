@@ -488,11 +488,11 @@ class LinkedListTest extends Specification{
         list.delete(0)
         list.delete(0)
         list.delete(0)
+        list.delete(0)
 
         then:
-        list.isEmpty()== false
-        list.size()== 1
-        list.get(0)== 4
+        list.isEmpty()== true
+        list.size()== 0
 
     }
 
@@ -508,11 +508,11 @@ class LinkedListTest extends Specification{
         list.delete(3)
         list.delete(2)
         list.delete(1)
+        list.delete(0)
 
         then:
-        list.isEmpty()== false
-        list.size()== 1
-        list.get(0)== 1
+        list.isEmpty()== true
+        list.size()== 0
 
     }
 
