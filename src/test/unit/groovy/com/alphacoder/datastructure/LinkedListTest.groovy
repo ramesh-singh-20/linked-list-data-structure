@@ -334,6 +334,8 @@ class LinkedListTest extends Specification{
 
         when:
         list.reverseRecursively()
+        System.out.println("Reverse List")
+        list.print()
 
         then:
         list.isEmpty()== false
